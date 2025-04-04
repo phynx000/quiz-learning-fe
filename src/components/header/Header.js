@@ -2,38 +2,40 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">Hệ thống thi trực tuyến</Navbar.Brand>
+        <NavLink to="/" className={"navbar-brand"}>
+          Hệ thống thi trực tuyến
+        </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Link to="/" className="nav-link">
+            <NavLink to="/" className="nav-link">
               Home
-            </Link>
-            <Link to="/users" className="nav-link">
+            </NavLink>
+            <NavLink to="/users" className="nav-link">
               User
-            </Link>
-            <Link to="/admins" className="nav-link">
+            </NavLink>
+            <NavLink to="/admins" className="nav-link">
               Admin
-            </Link>
+            </NavLink>
           </Nav>
           <Nav>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            <button className="btn-login">Log in</button>
+            <button className="btn-signup">Sign up</button>
+            {/* <NavDropdown title="Setting" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Login</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Profile</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+              <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
+            </NavDropdown> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
